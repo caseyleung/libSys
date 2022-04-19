@@ -1,0 +1,76 @@
+1,数据库要重新设计 而且尽可能少些不必要的字段。 √  避免的情况：Data too long for column 'name' at row 1
+2.ssm重新设计，按照老师的项目模式和布局
+3.重新配置背景图片
+4.异常处理页面 404
+5.分页功能
+6.把菜单放在侧栏 （x）
+7.登录页面添加用户和管理员的单选
+8.界面的颜色  （√）
+9.日期格式    （√）
+10.数据库的数据重新输入 （图书，和借阅日期要更新 2017太明显是错的）  （√）
+11.重写配置文件 一个web.xml 和 spring的配置文件
+12.自己重新搭建一个，能够用maven打包的，没有中文乱码的
+
+
+
+ssm
+pom.xml 依赖注入
+1.spring的配置文件  //book.xml
+2.web.xml文件      //
+3.java代码         //
+4.mapper实现       //
+5.view页面         //
+
+-java
+    -com.library
+        -bean 对应4张表 amdin, reader, book, lend
+        -controller
+        -dao  他这是没有impl，直接写方法，在mapper包写sql语句
+        -service
+
+-resources
+    -mapper
+        -实际上是dao层一个接口的实现类
+
+    -book.xml
+    -database.properties
+    -buzzLibrary.sql
+
+-webapp
+    -static
+        -css
+        -img
+            -book.jpg
+            -library.jpg
+            -login.jpg
+            -reader.jpg
+            -reading.jpg
+        -js
+    -WEB-INF
+        -views
+             //11
+            -admin_book_add.jsp
+            -admin_book_detail.jsp
+            -admin_book_edit.jsp
+            -admin_books.jsp
+            -admin_header.jsp
+            -admin_lend_list.jsp
+            -admin_main.jsp
+            -admin_reader_add.jsp
+            -admin_reader_edit.jsp
+            -admin_readers.jsp
+            -admin_repwd.jsp
+             //2
+            -index.jsp
+            -404.jsp
+             //8
+            -reader_book_detail.jsp
+            -reader_books.jsp
+            -reader_header.jsp
+            -reader_info.jsp
+            -reader_info_edit.jsp
+            -reader_lend_list.jsp
+            -reader_main.jsp
+            -reader_repwd.jsp
+        -web.xml
+
