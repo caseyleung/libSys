@@ -113,7 +113,9 @@ public class BookController {
     @RequestMapping("/admin_book_detail.html")
     public ModelAndView adminBookDetail(HttpServletRequest request) {
         long bookId = Long.parseLong(request.getParameter("bookId"));
+        System.out.println("------------------"+bookId);
         Book book = bookService.getBook(bookId);
+        System.out.println("------------------"+book.toString());
         ModelAndView modelAndView = new ModelAndView("admin_book_detail");
         modelAndView.addObject("detail", book);
         return modelAndView;

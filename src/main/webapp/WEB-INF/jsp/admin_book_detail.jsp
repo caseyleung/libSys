@@ -12,7 +12,7 @@
         })
     </script>
 </head>
-<body background="../../static/img/book2.jpg" style=" background-repeat:no-repeat ;
+<body background="img/books.jpg" style=" background-repeat:no-repeat ;
 background-size:100% 100%;
 background-attachment: fixed;">
 <div id="header" style="padding-bottom: 80px"></div>
@@ -58,8 +58,8 @@ background-attachment: fixed;">
                     <td>${detail.pubdate}</td>
                 </tr>
                 <tr>
-                    <th>分类号</th>
-                    <td>${detail.classId}</td>
+                    <th>分类</th>
+                    <td>${detail.book_class}</td>
                 </tr>
                 <tr>
                     <th>数量</th>
