@@ -54,6 +54,20 @@ public class BookController {
         }
     }
 
+    @RequestMapping("/querybooktype.html")
+    public ModelAndView querryBookByType(String type){
+        if(bookService.matchBook(type)){  //大于0
+            ArrayList<Book> books = bookService.queryBook(type);
+            ModelAndView modelAndView = new ModelAndView("admin_books");
+            modelAndView.addObject("books",books);
+            return modelAndView;
+        }else {
+            return new ModelAndView("admin_books","error","没有匹配到图书");
+        }
+
+    }
+
+
     @RequestMapping("/reader_querybook_do.html")
     public ModelAndView readerQueryBookDo(String searchWord) {
         if (bookService.matchBook(searchWord)) {
