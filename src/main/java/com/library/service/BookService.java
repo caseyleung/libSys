@@ -16,6 +16,10 @@ public class BookService {
         return bookDao.queryBook(searchWord);
     }
 
+    public ArrayList<Book> querryBookByType(String type){
+        return bookDao.querryBookByType(type);
+    }
+
     //获取全部图书
     public ArrayList<Book> getAllBooks() {
         return bookDao.getAllBooks();

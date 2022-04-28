@@ -20,6 +20,12 @@ public class BookDao {
         return sqlSessionTemplate.selectOne(NAMESPACE + "matchBook", search);
     }
 
+    public ArrayList<Book> querryBookByType(final String type) {
+        String search = "%" + type + "%";
+        List<Book> result = sqlSessionTemplate.selectList(NAMESPACE + "querryBookByType", search);
+        return (ArrayList<Book>) result;
+    }
+
     public ArrayList<Book> queryBook(final String searchWord) {
         String search = "%" + searchWord + "%";
         List<Book> result = sqlSessionTemplate.selectList(NAMESPACE + "queryBook", search);

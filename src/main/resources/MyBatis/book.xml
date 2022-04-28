@@ -20,6 +20,11 @@
         select * from library.book_info where name like #{search}
         or author like #{search} or introduction like #{search}
     </select>
+
+    <select id="querryBookByType" resultType="com.library.bean.Book" parameterType="String">
+        select * from library.book_info where book_class like #{search}
+    </select>
+
     <select id="matchBook" resultType="int" parameterType="String">
         select count(*) from library.book_info where name like #{search}
         or author like #{search} or introduction like #{search}
