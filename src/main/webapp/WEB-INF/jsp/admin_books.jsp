@@ -18,11 +18,33 @@ background-size:100% 100%; background-attachment: fixed;">
 
 <div id="header"></div>
 
-<div style="padding: 70px 550px 10px">
-    <form method="post" action="querybook.html" class="form-inline"  id="searchForm">
-        <div class="input-group">
-           <input type="text" placeholder="输入图书名" class="form-control" id="search" name="searchWord" class="form-control">
-            <span class="input-group-btn">
+
+<%-- 下来框可以看header的写法 --%>
+<div style="padding: 70px 550px 10px" id="container">
+    <div style="display:inline-block" >
+        <form method="post" action="" class="form-inline"  id="bookClass">
+            <%--collapse navbar-collapse--%>
+            <div class="input-group-btn dropdown">
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white">type<b class="caret"></b></a>
+                        <c:forEach items="${books}" var="book">
+                        <ul class="dropdown-menu">
+                            <li><a href="querybooktype.html"><c:out value="${book.bookId}"></c:out></a></li>
+                            <li class="divider"></li>
+                        </ul>
+                        </c:forEach>
+                    </li>
+                </ul>
+            </div>
+        </form>
+    </div>
+
+    <div style="display:inline-block;margin-left:10px" >
+        <form method="post" action="querybook.html" class="form-inline"  id="searchForm">
+            <div class="input-group">
+                <input type="text" placeholder="输入图书名" class="form-control" id="search" name="searchWord" class="form-control">
+                <span class="input-group-btn">
                 <input type="submit" value="搜索" class="btn btn-default">
             </span>
         </div>
@@ -39,6 +61,9 @@ background-size:100% 100%; background-attachment: fixed;">
         })
     </script>
 </div>
+
+</div>
+
 
 <div style="position: relative;top: 10%">
 
@@ -87,19 +112,19 @@ background-size:100% 100%; background-attachment: fixed;">
 
             <tbody>
             <c:forEach items="${books}" var="book">
-            <tr>
-                <td><c:out value="${book.name}"></c:out></td>
-                <td><c:out value="${book.author}"></c:out></td>
-                <td><c:out value="${book.publish}"></c:out></td>
-                <td><c:out value="${book.isbn}"></c:out></td>
-                <td><c:out value="${book.price}"></c:out></td>
-                <td><c:out value="${book.number}"></c:out></td>
-                <td><a href="admin_book_detail.html?bookId=<c:out value="${book.bookId}"></c:out>">
-                    <button type="button" class="btn btn-success btn-xs">详情</button>
-                </a></td>
-                <td><a href="updatebook.html?bookId=<c:out value="${book.bookId}"></c:out>"><button type="button" class="btn btn-info btn-xs">编辑</button></a></td>
-                <td><a href="deletebook.html?bookId=<c:out value="${book.bookId}"></c:out>"><button type="button" class="btn btn-danger btn-xs">删除</button></a></td>
-            </tr>
+                <tr>
+                    <td><c:out value="${book.name}"></c:out></td>
+                    <td><c:out value="${book.author}"></c:out></td>
+                    <td><c:out value="${book.publish}"></c:out></td>
+                    <td><c:out value="${book.isbn}"></c:out></td>
+                    <td><c:out value="${book.price}"></c:out></td>
+                    <td><c:out value="${book.number}"></c:out></td>
+                    <td><a href="admin_book_detail.html?bookId=<c:out value="${book.bookId}"></c:out>">
+                        <button type="button" class="btn btn-success btn-xs">详情</button>
+                    </a></td>
+                    <td><a href="updatebook.html?bookId=<c:out value="${book.bookId}"></c:out>"><button type="button" class="btn btn-info btn-xs">编辑</button></a></td>
+                    <td><a href="deletebook.html?bookId=<c:out value="${book.bookId}"></c:out>"><button type="button" class="btn btn-danger btn-xs">删除</button></a></td>
+                </tr>
             </c:forEach>
             </tbody>
         </table>
