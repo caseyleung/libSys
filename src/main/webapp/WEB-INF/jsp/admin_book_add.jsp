@@ -10,6 +10,9 @@
         .form-group {
             margin-bottom: 0;
         }
+        label{
+            color: white;
+        }
     </style>
     <script>
         $(function () {
@@ -17,19 +20,19 @@
         })
     </script>
 </head>
-<body background="img/sky.jpg" style=" background-repeat:no-repeat ;
+<body background="img/addBook.jpg" style=" background-repeat:no-repeat ;
 background-size:100% 100%;
 background-attachment: fixed;">
 
 <div id="header"></div>
-<div style="position: relative;padding-top: 60px; width: 80%;margin-left: 10%">
+<div style="position: relative;padding-top: 60px; width: 40%;margin-left: 10%">
     <form action="book_add_do.html" method="post" id="addbook">
         <div class="form-group">
             <label for="name">图书名</label>
             <input type="text" class="form-control" name="name" id="name" placeholder="请输入书名">
         </div>
         <div class="form-group">
-            <label for="author">作者</label>
+            <label for="author" >作者</label>
             <input type="text" class="form-control" name="author" id="author" placeholder="请输入作者名">
         </div>
         <div class="form-group">

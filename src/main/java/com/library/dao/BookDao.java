@@ -1,6 +1,7 @@
 package com.library.dao;
 
 import com.library.bean.Book;
+import com.library.bean.ClassInfo;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -20,15 +21,17 @@ public class BookDao {
         return sqlSessionTemplate.selectOne(NAMESPACE + "matchBook", search);
     }
 
-    public ArrayList<Book> querryBookByType(final String type) {
+    public ArrayList<Book> queryBookByType(final String type) {
         String search = "%" + type + "%";
-        List<Book> result = sqlSessionTemplate.selectList(NAMESPACE + "querryBookByType", search);
+        List<Book> result = sqlSessionTemplate.selectList(NAMESPACE + "queryBookByType", search);
         return (ArrayList<Book>) result;
     }
 
     public ArrayList<Book> queryBook(final String searchWord) {
         String search = "%" + searchWord + "%";
+        System.out.println("====================="+search);
         List<Book> result = sqlSessionTemplate.selectList(NAMESPACE + "queryBook", search);
+        System.out.println(result.toString());
         return (ArrayList<Book>) result;
     }
 
@@ -37,6 +40,11 @@ public class BookDao {
         List<Book> result = sqlSessionTemplate.selectList(NAMESPACE + "getAllBooks");
         //result 是 ArrayList<Book> 类型的
         return (ArrayList<Book>) result;
+    }
+
+    public ArrayList<ClassInfo> getClassInfo(){
+        List<ClassInfo> result =sqlSessionTemplate.selectList(NAMESPACE+"querryClassInfo");
+        return (ArrayList<ClassInfo>) result;
     }
 
     public int addBook(final Book book) {

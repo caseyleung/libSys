@@ -1,6 +1,7 @@
 package com.library.service;
 
 import com.library.bean.Book;
+import com.library.bean.ClassInfo;
 import com.library.dao.BookDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,14 +17,16 @@ public class BookService {
         return bookDao.queryBook(searchWord);
     }
 
-    public ArrayList<Book> querryBookByType(String type){
-        return bookDao.querryBookByType(type);
+    public ArrayList<Book> queryBookByType(String type){
+        return bookDao.queryBookByType(type);
     }
 
     //获取全部图书
     public ArrayList<Book> getAllBooks() {
         return bookDao.getAllBooks();
     }
+
+    public ArrayList<ClassInfo> getClassInfo(){return bookDao.getClassInfo();}
 
     public boolean matchBook(String searchWord) {
         return bookDao.matchBook(searchWord) > 0;

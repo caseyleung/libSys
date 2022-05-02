@@ -27,6 +27,8 @@
                     </a>
                 </li>
             </ul>
+
+
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="reader_info.html">${readercard.name}, 已登录</a></li>
                 <li><a href="login.html">退出</a></li>

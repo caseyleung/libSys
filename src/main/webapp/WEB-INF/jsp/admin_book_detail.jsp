@@ -59,7 +59,7 @@ background-attachment: fixed;">
                 </tr>
                 <tr>
                     <th>分类</th>
-                    <td>${detail.book_class}</td>
+                    <td>${detail.class_id}</td>
                 </tr>
                 <tr>
                     <th>数量</th>

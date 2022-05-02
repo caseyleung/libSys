@@ -1,6 +1,7 @@
 package com.library.controller;
 
 import com.library.bean.Book;
+import com.library.bean.ClassInfo;
 import com.library.bean.Lend;
 import com.library.bean.ReaderCard;
 import com.library.service.BookService;
@@ -44,6 +45,8 @@ public class BookController {
 
     @RequestMapping("/querybook.html")
     public ModelAndView queryBookDo(String searchWord) {
+
+        System.out.println("_________________"+searchWord);
         if (bookService.matchBook(searchWord)) {
             ArrayList<Book> books = bookService.queryBook(searchWord);
             ModelAndView modelAndView = new ModelAndView("admin_books");
@@ -54,8 +57,16 @@ public class BookController {
         }
     }
 
+    @RequestMapping("/querryclassinfo.html")
+    public ModelAndView querryClassInfo() {
+            ArrayList<ClassInfo> classInfos = bookService.getClassInfo();
+            ModelAndView modelAndView = new ModelAndView("admin_books");
+            modelAndView.addObject("classInfos", classInfos);
+            return modelAndView;
+    }
+
     @RequestMapping("/querybooktype.html")
-    public ModelAndView querryBookByType(String type){
+    public ModelAndView queryBookByType(String type){
         if(bookService.matchBook(type)){  //大于0
             ArrayList<Book> books = bookService.queryBook(type);
             ModelAndView modelAndView = new ModelAndView("admin_books");

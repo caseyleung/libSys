@@ -30,6 +30,9 @@
 <body background="img/library.jpg" style=" background-repeat:no-repeat ;
 background-size:100% 100%;
 background-attachment: fixed;">
+<%--
+<jsp:useBean id="error" scope="request" type="com.library.controller.LoginController"/>
+--%>
 <c:if test="${!empty error}">
     <script>
             alert("${error}");

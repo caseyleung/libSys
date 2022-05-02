@@ -23,8 +23,8 @@ background-size:100% 100%; background-attachment: fixed;">
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: white"> 图书分类 <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <c:forEach items="${books}" var="book">
-                        <li><a href="querybooktype.html"><c:out value="${book.book_class}"></c:out></a></li>
+                    <c:forEach items="${classInfos}" var="book">
+                        <li><a href="querybooktype.html"><c:out value="${classInfos.class_name}"></c:out></a></li>
                         <li class="divider"></li>
                     </c:forEach>
                 </ul>
